@@ -1,0 +1,264 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    background-color: rgb(240, 234, 234);
+    height:65px;
+    width:100%;
+}
+nav img{
+    width:5%;
+    border-radius: 50%;
+}
+
+
+.logo{
+    color:rgb(203, 73, 73);
+    margin: 0;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    
+}
+.container{
+    height:100vh;
+    
+}
+
+.boxes{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap:50px;
+    margin-top:50px;
+}
+.box {
+    position: relative;
+    width:300px;
+    height:300px;
+    background-color:rgb(215, 144, 118);
+    overflow: hidden;
+    margin:35px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    text-align: center;
+}
+.box img{
+    width:300px;
+    height: 300px;
+    object-fit: cover;
+
+}
+.box:hover,
+.box:focus {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.description{
+    width: 300px;
+    height: 100%;
+    position: absolute;
+    opacity: 0;
+     background-color: black;
+    color: rgb(230, 223, 223);
+    padding: 5px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    display: flex;
+    justify-content: center;
+    bottom: 0px;
+    transition: opacity 0.3s ease;
+    cursor: pointer;
+    flex-direction: column;
+    overflow: auto;
+    
+}
+.box:focus,.box:hover .description{
+    opacity: 80%;
+}
+.description h3{
+    text-align: center;
+    margin-top: 20px;
+}
+.description h4{
+    text-align: center;
+    width: 100%;
+    margin-bottom: 5 px;
+}
+.description p{   
+    text-align: left;
+    width:100%;
+    margin-right: 10px;
+    padding-left: 5px;
+    overflow-wrap: break-word;
+}
+.note
+{
+    color:rgb(203, 73, 73);
+    white-space: nowrap; 
+    overflow: hidden;
+    display: block;
+    animation: marquee 15s linear infinite;
+    
+    
+}
+@keyframes marquee {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.delivery{
+    width: 100%;
+    height: 300px;
+    display: flex;
+    justify-content: space-between;
+    
+}
+.delivery img{
+    flex: 1;
+    height:450px;
+}
+.delivery-left, .delivery-right{
+    width:50%;
+}
+.features h3{
+    display: flex;
+    justify-content: center;
+    
+}
+.delivery-right ul li{
+    list-style-type: none;
+    display: flex;
+    justify-content:flex-start;
+}
+.refund h3{
+    display: flex;
+    justify-content: center;
+}
+.dividerc{
+    margin-top:160px;
+}
+.contact{
+    list-style-type: none;
+}
+@media (max-width: 4000px ) and (min-width:780px){
+    .boxes {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 780px) and (min-width:431px) {
+    .boxes {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    
+
+    nav img {
+        width: 10%;
+    }
+
+    nav {
+        height: auto;
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 1.2rem;
+    }
+}
+@media screen and (max-width:430px ) and (min-width:381px) {
+    nav{
+        width:100%;
+    }
+    nav img{
+        width:16%;
+    }
+    .boxes{
+        grid-template-columns: 1fr;
+    }
+    .box{
+        display: flex;
+        justify-content: center;
+        margin-left: 60px;
+    }
+    .delivery{
+        padding: 10px;
+    }
+    .delivery-left,.delivery-right{
+        width:50%;
+    }
+    .delivery ul li{
+        font-size: 10px;
+        
+    }
+    .delivery img{
+        width:200px;
+        height:350px;
+    }
+}
+@media screen and (max-width:380px) and (min-width:322px){
+    nav{
+        width:100%;
+    }
+    nav img{
+        width:16%;
+    }
+
+    .boxes{
+        grid-template-columns: 1fr;
+    }
+    .box{
+        display: flex;
+        justify-content: center;
+    }
+    .delivery ul li{
+        font-size: 9px;
+    }
+    .delivery img{
+        width:200px;
+        height:350px;
+    }
+}
+
+    
+
+@media (max-width: 321px) {
+    nav{
+        width:100%;
+    }
+    nav img{
+        width:18%;
+    }
+
+    .boxes{
+        grid-template-columns: 1fr;
+    }
+    
+
+    .logo {
+        font-size: 1.2rem;
+    }
+
+    .box {
+        margin: 20px 10px;
+    }
+
+    .delivery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .delivery img {
+        width:90px;
+        height:90px;
+       
+    }
+    .delivery-right ul li{
+        font-size: 11px;
+    }
+}
